@@ -1,0 +1,34 @@
+!!! XML
+!!! Strict
+%html{html_attrs('en')}
+  %head
+    %title
+      = catch_content :for_title
+      to imagine
+    = css_include_tag :master
+    = css_include_tag :typography
+    = js_include_tag :jquery
+  %body
+    #auth
+      .container
+        %ul
+          %li= link_to "log out", url(:logout)      
+          /%li= link_to "settings", url(:root)      
+        %br{:style => "clear: both;"}
+    .container
+      #header
+        #user.right= current_user.login
+        /%img.right.avatar{:src => "https://secure.gravatar.com/avatar/64082d83db14dd06252607325df8679c?s=40"}
+        %h1
+          to
+          = link_to "imagine", url(:root)
+      #nav
+        = render_menu
+        %br{:style => "clear: both;"}
+      #main= catch_content :for_layout
+      #footer
+        %p 
+          to
+          = link_to "imagine", "http://github.com/ludo/to-imagine/wikis/home", :class => "to imagine"
+          is developed by 
+          = link_to "cubicphuse", "http://cubicphuse.nl"
