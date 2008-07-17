@@ -12,12 +12,12 @@
     #auth
       .container
         %ul
-          %li= link_to "log out", url(:logout)      
-          /%li= link_to "settings", url(:root)      
+          /%li= link_to "log out", url(:logout)      
+          %li= link_to "settings", url(:root)      
         %br{:style => "clear: both;"}
     .container
       #header
-        #user.right= current_user.login
+        /#user.right= current_user.login
         /%img.right.avatar{:src => "https://secure.gravatar.com/avatar/64082d83db14dd06252607325df8679c?s=40"}
         %h1
           to

@@ -1,0 +1,9 @@
+- title "Collections"
+- menu :collections
+
+.actions
+  %h2
+    collections
+    %small== (#{link_to "new", url(:new_collection)})
+  %ul= partial :collection, :with => @collections
+  %br{:style => "clear: both;"}

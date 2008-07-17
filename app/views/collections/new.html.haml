@@ -1,0 +1,12 @@
+- title "new collection"
+- menu :collections
+
+%h2 new collection
+
+= error_messages_for :collection
+
+- form_for(@collection, :action => url(:collections)) do
+  = partial :form
+  = submit_button "Create"
+  or
+  = link_to "cancel", url(:collections)

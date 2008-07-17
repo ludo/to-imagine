@@ -1,0 +1,12 @@
+- title "edit collection"
+- menu :collections
+
+%h2 edit collection
+
+= error_messages_for :collection
+
+- form_for(@collection, :action => url(:collection, @collection)) do
+  = partial :form
+  = submit_button "Update"
+  or
+  = link_to "cancel", url(:collection, @collection)
