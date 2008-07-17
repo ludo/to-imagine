@@ -21,7 +21,7 @@ namespace :vlad do
   set :merb_extra_config,  nil
   set :merb_environment,   "production"
   set :merb_group,         nil
-  set :merb_port,          4100
+  set :merb_port,          4101
   set :merb_prefix,        nil
   set :merb_servers,       1
   set :merb_user,          nil
