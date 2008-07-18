@@ -24,6 +24,12 @@ Merb::Router.prepare do |r|
   # Collections
   r.resources :collections
   
+  # Images
+  r.resources :images do |images|
+    images.match('/:filename.:extension').to(:format => 'jpg', :controller => 'images', :action => 'show')
+    images.match('/:size.:filename.:extension').to(:format => 'jpg', :controller => 'images', :action => 'show')
+  end
+  
   # Homepage
   r.match('/').to(:controller => 'collections', :action =>'index').name(:root)
 end

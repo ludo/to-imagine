@@ -72,6 +72,9 @@ dependency "dm-validations"
 
 Merb::BootLoader.after_app_loads do
   # Add dependencies here that must load after the application loads:
+  
+  # MIME types
+  Merb.add_mime_type :jpg, :to_jpg, %w[image/jpeg]
 end
 
 #

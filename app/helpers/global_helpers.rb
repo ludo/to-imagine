@@ -54,7 +54,7 @@ module Merb
           :position => 2
         },
         :upload => {
-          :content => link_to("Upload", url(:root)),
+          :content => link_to("Upload", url(:new_image)),
           :position => 3,
           :attrs => { :class => "right" }
         }

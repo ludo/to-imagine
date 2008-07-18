@@ -1,0 +1,12 @@
+- title "new image"
+- menu :upload
+
+%h2 new image
+
+= error_messages_for :image
+
+- form_for(@image, :action => url(:images), :multipart => true) do
+  = partial :form
+  = submit_button "Create"
+  or
+  = link_to "cancel", url(:images)
