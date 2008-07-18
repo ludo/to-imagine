@@ -3,7 +3,8 @@ class Collection
 
   # === Properties
   property :id, Integer, :serial => true
-  property :title, String, :size => 64, :nullable => false
+  property :title, String, :size => 64, :unique => true, :nullable => false
+  property :public, Boolean, :default => true, :nullable => false
   property :created_at, DateTime
   property :updated_at, DateTime
   
@@ -25,7 +26,7 @@ class Collection
   #
   # --
   # @api public
-  def title(length)
+  def sliced_title(length)
     str = @title[0..length - 1]
     str += "..." if @title.size > length
     str

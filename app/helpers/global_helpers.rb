@@ -53,6 +53,11 @@ module Merb
           :content => link_to("Collections", url(:collections)),
           :position => 2
         },
+        :upload => {
+          :content => link_to("Upload", url(:root)),
+          :position => 3,
+          :attrs => { :class => "right" }
+        }
       }
     end
   end
