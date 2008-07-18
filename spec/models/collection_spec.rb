@@ -79,3 +79,35 @@ describe Collection do
     end
   end
 end
+
+describe Collection, "when shortened_title" do
+  include CollectionSpecHelper
+
+  describe "is called with a long title" do
+    before(:each) do
+      @collection = Collection.new(valid_properties.merge(:title => "The Little Large Vacation At the Beach in Hawaii!"))
+    end
+  
+    it "should be shortened" do
+      @collection.shortened_title.size.should == 19 # 16 + 3 from '...'
+    end
+  
+    it "should be appended with '...'" do
+      @collection.shortened_title[-3,3].should == "..."
+    end
+    
+    it "should allow a custom length" do
+      @collection.shortened_title(6).should == "The Li..."
+    end
+  end
+  
+  describe "is called with a short title" do
+    before(:each) do
+      @collection = Collection.new(valid_properties.merge(:title => "Hawaii"))
+    end
+
+    it "should return the title as is" do
+      @collection.shortened_title(16).should == @collection.title
+    end
+  end
+end

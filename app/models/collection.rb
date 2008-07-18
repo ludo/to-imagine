@@ -26,7 +26,7 @@ class Collection
   #
   # --
   # @api public
-  def sliced_title(length)
+  def shortened_title(length = 16)
     str = @title[0..length - 1]
     str += "..." if @title.size > length
     str

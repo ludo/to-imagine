@@ -1,3 +1,3 @@
 %li
   = link_to image_tag("empty.png"), url(:collection, collection), :class => "image"
-  = link_to collection.sliced_title(16), url(:collection, collection), :title => collection
+  = link_to collection.shortened_title, url(:collection, collection), :title => collection
