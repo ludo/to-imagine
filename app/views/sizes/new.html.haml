@@ -1,0 +1,11 @@
+- title "new size"
+
+%h2 new size
+
+= error_messages_for :size
+
+- form_for(@size, :action => url(:sizes)) do
+  = partial :form
+  = submit_button "Create"
+  or
+  = link_to "cancel", url(:sizes)

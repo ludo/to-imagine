@@ -1,0 +1,11 @@
+- title "Sizes"
+
+.actions
+  %h2
+    sizes
+    %small== (#{link_to "new", url(:new_size)})
+  %p The following sizes are currently supported. Dimensions displayed are width x height. To edit or delete a size, move your mouse over the sizes.
+  %ul= partial :size, :with => @sizes
+  %br{:style => "clear: both;"}
+
+%script{:type => "text/javascript"}= partial :toggle, :format => :js

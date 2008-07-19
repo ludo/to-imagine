@@ -1,0 +1,6 @@
+%li{:id => "size-#{size.id}"}
+  = size
+  == (#{size.dimensions})
+  %small{:id => "edit-size-#{size.id}", :class => "hidden"}
+    = link_to "edit", url(:edit_size, size)
+    = delete_button :size, size, "delete", :class => "delete_button"

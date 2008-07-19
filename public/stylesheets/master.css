@@ -64,7 +64,7 @@ a.imagine, #footer a.imagine {
 	color: #330;
 	cursor: pointer;
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: .9em;
+	font-size: inherit;
 	padding: 0;
 }
 
@@ -205,29 +205,30 @@ div#footer a:hover, div#footer a:active {
 	padding: 0;
 }
 
-/* These styles are neccessary for jQuery... Why?! */
-.actions li {
+/* Collection
+ * ------------------------------------------------------------------------- */
+.actions li.collection {
 	float: left;
 	margin: .5em;
 	position: relative;
 	text-align: center;
 }
 
-.actions li:hover a.image {
+.actions li.collection:hover a.image {
 	background: #ffd;
 	border: none;
 }
 
-.actions li:hover img {
+.actions li.collection:hover img {
 	border: none;
 }
 
-.actions li a {
+.actions li.collection a {
 	display: block;
 	max-width: 164px;
 }
 
-.actions a.image {
+.actions li.collection a.image {
 	background: inherit;
 	border: none;
 	display: table-cell;
@@ -238,22 +239,10 @@ div#footer a:hover, div#footer a:active {
 	width: 164px;
 }
 
-.actions img {
+.actions li.collection img {
 	border: 1px solid #bbb;
 	margin: 0;
 	padding: 2px;
-}
-
-.actions .due {
-	background: #9e9;
-}
-
-.actions .due_soon {
-	background: #e99;
-}
-
-.actions .due_alarm {
-	background: #f44;
 }
 
 /* Completed
@@ -353,6 +342,10 @@ form dl dd input, form dl dd textarea {
 
 form dl dd.major input {
 	font-size: 1em;
+}
+
+form input.number {
+	text-align: right;
 }
 
 form .hint {

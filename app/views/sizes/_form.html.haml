@@ -1,0 +1,10 @@
+%dl
+  %dt= label "Title", "", :for => "size_title"
+  %dd.major= text_control :title, :maxlength => 32, :size => 50
+  %dt Dimensions
+  %dd
+    = text_control :width, :maxlength => 6, :size => 6, :class => "number"
+    = label "px (width)", "", :for => "size_width"
+    x
+    = text_control :height, :maxlength => 6, :size => 6, :class => "number"
+    = label "px (height)", "", :for => "size_height"
