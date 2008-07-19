@@ -2,5 +2,5 @@
   %dt= label "File", "", :for => "image_data"
   %dd.amjor= file_control :data
 
-  %dt= label "Collection", "", :for => "image_collection"
-  %dd= select_control :collection_id, :collection => Collection.all(:order => [:title]), :text_method => :title, :value_method => :id, :include_blank => true, :selected => @image.collection_id
+  %dt= label "Album", "", :for => "image_album"
+  %dd= select_control :album_id, :collection => Album.all(:order => [:title]), :text_method => :title, :value_method => :id, :include_blank => true, :selected => @image.album_id

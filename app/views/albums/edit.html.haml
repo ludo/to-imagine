@@ -1,0 +1,12 @@
+- title "edit album"
+- menu :albums
+
+%h2 edit album
+
+= error_messages_for :album
+
+- form_for(@album, :action => url(:album, @album)) do
+  = partial :form
+  = submit_button "Update"
+  or
+  = link_to "cancel", url(:album, @album)

@@ -205,30 +205,30 @@ div#footer a:hover, div#footer a:active {
 	padding: 0;
 }
 
-/* Collection
+/* Album
  * ------------------------------------------------------------------------- */
-.actions li.collection {
+.actions li.album {
 	float: left;
 	margin: .5em;
 	position: relative;
 	text-align: center;
 }
 
-.actions li.collection:hover a.image {
+.actions li.album:hover a.image {
 	background: #ffd;
 	border: none;
 }
 
-.actions li.collection:hover img {
+.actions li.album:hover img {
 	border: none;
 }
 
-.actions li.collection a {
+.actions li.album a {
 	display: block;
 	max-width: 164px;
 }
 
-.actions li.collection a.image {
+.actions li.album a.image {
 	background: inherit;
 	border: none;
 	display: table-cell;
@@ -239,7 +239,7 @@ div#footer a:hover, div#footer a:active {
 	width: 164px;
 }
 
-.actions li.collection img {
+.actions li.album img {
 	border: 1px solid #bbb;
 	margin: 0;
 	padding: 2px;

@@ -1,4 +1,4 @@
-class Collection
+class Album
   include DataMapper::Resource
 
   # === Properties
@@ -36,7 +36,7 @@ class Collection
   # Return the title when stringified
   #
   # ===== Returns
-  # String:: The collection's title
+  # String:: The album's title
   #
   # --
   # @api public

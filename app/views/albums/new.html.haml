@@ -1,0 +1,12 @@
+- title "new album"
+- menu :albums
+
+%h2 new album
+
+= error_messages_for :album
+
+- form_for(@album, :action => url(:albums)) do
+  = partial :form
+  = submit_button "Create"
+  or
+  = link_to "cancel", url(:albums)

@@ -9,10 +9,10 @@ class Image
   property :data, Object, :nullable => false
   property :created_at, DateTime
   property :updated_at, DateTime
-  property :collection_id, Integer, :nullable => false
+  property :album_id, Integer, :nullable => false
   
   # === Associations
-  belongs_to :collection
+  belongs_to :album
   
   # ==== Instance methods
   

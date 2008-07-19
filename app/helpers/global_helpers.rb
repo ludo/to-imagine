@@ -1,5 +1,19 @@
 module Merb
   module GlobalHelpers
+    # Generate an url to an image
+    #
+    # ==== Parameters
+    # image<Image>:: An Image object
+    #
+    # ==== Returns
+    # String:: The URL for the image
+    #
+    # --
+    # @api public
+    def image_url(image)
+      "#{url(:image, image)}/#{image.filename}"
+    end
+    
     # Little helper for selecting which menu will be active
     #
     # ==== Parameters
@@ -49,8 +63,8 @@ module Merb
           :content => link_to("Dashboard", url(:root)),
           :position => 1
         },
-        :collections => {
-          :content => link_to("Collections", url(:collections)),
+        :albums => {
+          :content => link_to("Albums", url(:albums)),
           :position => 2
         },
         :upload => {

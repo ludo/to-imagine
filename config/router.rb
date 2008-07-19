@@ -21,8 +21,8 @@
 
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do |r|
-  # Collections
-  r.resources :collections
+  # Albums
+  r.resources :albums
   
   # Images
   r.resources :images do |images|
@@ -34,5 +34,5 @@ Merb::Router.prepare do |r|
   r.resources :sizes
   
   # Homepage
-  r.match('/').to(:controller => 'collections', :action =>'index').name(:root)
+  r.match('/').to(:controller => 'albums', :action =>'index').name(:root)
 end

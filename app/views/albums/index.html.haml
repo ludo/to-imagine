@@ -1,0 +1,9 @@
+- title "Albums"
+- menu :albums
+
+.actions
+  %h2
+    albums
+    %small== (#{link_to "new", url(:new_album)})
+  %ul= partial :album, :with => @albums
+  %br{:style => "clear: both;"}
