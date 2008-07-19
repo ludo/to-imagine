@@ -4,13 +4,15 @@ class Image
   # === Properties
   property :id, Integer, :serial => true
   property :filename, String, :nullable => false
-  property :content_type, String, :nullable => false
+  property :content_type, String, :writer => :private, :nullable => false
   property :size, Integer, :writer => :private, :nullable => false
   property :data, Object, :nullable => false
   property :created_at, DateTime
   property :updated_at, DateTime
+  property :collection_id, Integer, :nullable => false
   
   # === Associations
+  belongs_to :collection
   
   # ==== Instance methods
   

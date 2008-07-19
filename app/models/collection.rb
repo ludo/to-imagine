@@ -9,6 +9,7 @@ class Collection
   property :updated_at, DateTime
   
   # === Associations
+  has n, :images
 
   # === Instance methods
   
