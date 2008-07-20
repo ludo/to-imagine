@@ -1,6 +1,9 @@
 %dl
   %dt= label "File", "", :for => "asset_data"
-  %dd.amjor= file_control :data
-
+  %dd.major= file_control :data, :size => 50
+  %dt
+    = label "Description", "", :for => "asset_description"
+    .hint This is an optional field.
+  %dd= text_control :description, :size => 50, :maxlength => 128
   %dt= label "Album", "", :for => "asset_album"
   %dd= select_control :album_id, :collection => Album.all(:order => [:title]), :text_method => :title, :value_method => :id, :include_blank => true, :selected => @asset.album_id

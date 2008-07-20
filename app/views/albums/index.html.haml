@@ -5,5 +5,5 @@
   %h2
     albums
     %small== (#{link_to "new", url(:new_album)})
-  %ul= partial :album, :with => @albums
+  %ul.actions= partial :album, :with => @albums
   %br{:style => "clear: both;"}

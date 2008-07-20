@@ -1,0 +1,9 @@
+/* Show/hide image details */
+$(".actions li").hover(
+  function() {
+    $("#details-" + this.id).show();
+  }, 
+  function () {
+    $("#details-" + this.id).hide();
+  }
+);

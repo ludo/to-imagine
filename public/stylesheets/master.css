@@ -214,29 +214,24 @@ div#footer a:hover, div#footer a:active {
 	text-align: center;
 }
 
-.actions li.album:hover a.asset {
-	background: #ffd;
-	border: none;
-}
-
-.actions li.album:hover img {
-	border: none;
-}
-
-.actions li.album a {
-	display: block;
-	max-width: 164px;
-}
-
 .actions li.album a.asset {
 	background: inherit;
-	border: none;
+	border: 1px solid #fff;
 	display: table-cell;
 	height: 164px;
 	line-height: 0;
 	margin: 0;
 	vertical-align: middle;
 	width: 164px;
+}
+
+.actions li.album:hover a.asset {
+	background: #ffd;
+	border: 1px solid #cc6;
+}
+
+.actions li.album:hover img {
+	border: none;
 }
 
 .actions li.album img {

@@ -1,2 +1,16 @@
-%li.album
-  = image_tag(asset_url(asset))
+%li.album{:id => "asset-#{asset.id}"}
+  = link_to asset_tag(asset, :geometry => :thumb), url(:asset, asset), :class => "asset"
+  .details{:id => "details-asset-#{asset.id}"}
+    %table
+      %tr
+        %th Name
+        %td= asset.filename
+      %tr
+        %th Created
+        %td= asset.created_at.strftime("%d-%m-%Y %H:%M")
+      %tr
+        %th Dimensions
+        %td= asset.geometry
+      %tr
+        %th Album
+        %td= link_to asset.album, url(:album, asset.album)

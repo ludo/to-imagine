@@ -4,6 +4,7 @@ class Asset
   # === Properties
   property :id, Integer, :serial => true
   property :filename, String, :nullable => false
+  property :description, String, :size => 128
   property :content_type, String, :writer => :private, :nullable => false
   property :size, Integer, :writer => :private, :nullable => false
   property :data, Object, :nullable => false
@@ -42,11 +43,28 @@ class Asset
     end)
   end
   
-  def resize(geometry)
-    image = Magick::Image.from_blob(data).first
+  def geometry
+    image = load_image
     
-    image.change_geometry(geometry) do |width, height, img|
+    "#{image.columns}x#{image.rows}"
+  end
+  
+  def resize(geometry)
+    load_image.change_geometry(geometry) do |width, height, img|
       img.resize(width, height).to_blob
     end
+  end
+  
+private
+
+  # Create an +Image+ object from the asset's data
+  #
+  # ==== Returns
+  # Magick::Image:: An +Image+
+  #
+  # --
+  # @api private
+  def load_image
+    Magick::Image.from_blob(data).first
   end
 end
