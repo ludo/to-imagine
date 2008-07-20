@@ -1,0 +1,6 @@
+%li{:id => "geometry-#{geometry.id}"}
+  = geometry.description
+  %small== (#{geometry.name}, #{geometry})
+  %small{:id => "edit-geometry-#{geometry.id}", :class => "hidden"}
+    = link_to "edit", url(:edit_geometry, geometry)
+    = delete_button :geometry, geometry, "delete", :class => "delete_button"

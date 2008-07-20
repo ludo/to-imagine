@@ -1,0 +1,11 @@
+- title "new geometry"
+
+%h2 new geometry
+
+= error_messages_for :geometry
+
+- form_for(@geometry, :action => url(:geometries)) do
+  = partial :form
+  = submit_button "Create"
+  or
+  = link_to "cancel", url(:geometries)

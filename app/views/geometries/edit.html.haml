@@ -1,0 +1,11 @@
+- title "edit geometry"
+
+%h2 edit geometry
+
+= error_messages_for :geometry
+
+- form_for(@geometry, :action => url(:geometry, @geometry)) do
+  = partial :form
+  = submit_button "Update"
+  or
+  = link_to "cancel", url(:geometries)

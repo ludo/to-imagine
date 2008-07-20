@@ -1,0 +1,11 @@
+- title "Geometries"
+
+.actions
+  %h2
+    geometries
+    %small== (#{link_to "new", url(:new_geometry)})
+  %p The following geometries are currently supported. Dimensions displayed are width x height. To edit or delete a geometry, move your mouse over the geometries.
+  %ul= partial :geometry, :with => @geometries
+  %br{:style => "clear: both;"}
+
+%script{:type => "text/javascript"}= partial :toggle, :format => :js

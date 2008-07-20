@@ -27,11 +27,11 @@ Merb::Router.prepare do |r|
   # Assets
   r.resources :assets do |assets|
     assets.match('/:filename.:extension').to(:format => 'jpg', :controller => 'assets', :action => 'show')
-    assets.match('/:size.:filename.:extension').to(:format => 'jpg', :controller => 'assets', :action => 'show')
+    assets.match('/:geometry.:filename.:extension').to(:format => 'jpg', :controller => 'assets', :action => 'show')
   end
   
-  # Sizes
-  r.resources :sizes
+  # Geometries
+  r.resources :geometries
   
   # Homepage
   r.match('/').to(:controller => 'albums', :action =>'index').name(:root)

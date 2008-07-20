@@ -1,12 +1,12 @@
 %dl
-  %dt= label "Description", "", :for => "size_description"
+  %dt= label "Description", "", :for => "geometry_description"
   %dd.major= text_control :description, :maxlength => 32, :size => 50
-  %dt= label "Name", "", :for => "size_name"
+  %dt= label "Name", "", :for => "geometry_name"
   %dd= text_control :name, :maxlength => 16, :size => 25
   %dt Dimensions
   %dd
     = text_control :width, :maxlength => 6, :size => 6, :class => "number"
-    = label "px (width)", "", :for => "size_width"
+    = label "px (width)", "", :for => "geometry_width"
     x
     = text_control :height, :maxlength => 6, :size => 6, :class => "number"
-    = label "px (height)", "", :for => "size_height"
+    = label "px (height)", "", :for => "geometry_height"

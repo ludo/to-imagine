@@ -15,10 +15,10 @@ class Assets < Application
     
     case content_type
     when :jpg
-      if params[:size]
-        size = Size.first(:name => params[:size])
-        raise NotFound unless size
-        data = @asset.resize(size)
+      if params[:geometry]
+        geometry = Geometry.first(:name => params[:geometry])
+        raise NotFound unless geometry
+        data = @asset.resize(geometry)
       else
         data = @asset.data
       end

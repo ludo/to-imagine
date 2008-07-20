@@ -1,4 +1,4 @@
-class Size
+class Geometry
   include DataMapper::Resource
 
   # === Properties
