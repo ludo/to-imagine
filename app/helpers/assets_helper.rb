@@ -1,5 +1,5 @@
 module Merb
-    module ImagesHelper
+    module AssetsHelper
 
     end
 end

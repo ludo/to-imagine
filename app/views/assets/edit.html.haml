@@ -1,0 +1,9 @@
+%h2 edit image
+
+= error_messages_for :asset
+
+- form_for(@asset, :action => url(:asset, @asset), :multipart => true) do
+  = partial :form
+  = submit_button "Update"
+  or
+  = link_to "cancel", url(:asset, @asset)

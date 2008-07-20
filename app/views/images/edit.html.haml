@@ -1,9 +1,0 @@
-%h2 edit image
-
-= error_messages_for :image
-
-- form_for(@image, :action => url(:image, @image), :multipart => true) do
-  = partial :form
-  = submit_button "Update"
-  or
-  = link_to "cancel", url(:image, @image)

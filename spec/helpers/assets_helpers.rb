@@ -1,5 +1,5 @@
 require File.join(File.dirname(__FILE__), "..", 'spec_helper.rb')
 
-describe Merb::ImagesHelper do
+describe Merb::AssetsHelper do
 
 end

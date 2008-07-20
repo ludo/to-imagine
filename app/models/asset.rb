@@ -1,4 +1,4 @@
-class Image
+class Asset
   include DataMapper::Resource
 
   # === Properties
@@ -43,8 +43,10 @@ class Image
   end
   
   def resize(geometry)
-    Image.from_blob(data).change_geometry(geometry) do |cols, rows, img|
-      img.resize(cols, rows)
+    image = Magick::Image.from_blob(data).first
+    
+    image.change_geometry(geometry) do |width, height, img|
+      img.resize(width, height).to_blob
     end
   end
 end

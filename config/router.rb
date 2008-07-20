@@ -24,10 +24,10 @@ Merb::Router.prepare do |r|
   # Albums
   r.resources :albums
   
-  # Images
-  r.resources :images do |images|
-    images.match('/:filename.:extension').to(:format => 'jpg', :controller => 'images', :action => 'show')
-    images.match('/:size.:filename.:extension').to(:format => 'jpg', :controller => 'images', :action => 'show')
+  # Assets
+  r.resources :assets do |assets|
+    assets.match('/:filename.:extension').to(:format => 'jpg', :controller => 'assets', :action => 'show')
+    assets.match('/:size.:filename.:extension').to(:format => 'jpg', :controller => 'assets', :action => 'show')
   end
   
   # Sizes

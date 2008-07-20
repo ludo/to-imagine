@@ -214,7 +214,7 @@ div#footer a:hover, div#footer a:active {
 	text-align: center;
 }
 
-.actions li.album:hover a.image {
+.actions li.album:hover a.asset {
 	background: #ffd;
 	border: none;
 }
@@ -228,7 +228,7 @@ div#footer a:hover, div#footer a:active {
 	max-width: 164px;
 }
 
-.actions li.album a.image {
+.actions li.album a.asset {
 	background: inherit;
 	border: none;
 	display: table-cell;
@@ -257,7 +257,7 @@ div#footer a:hover, div#footer a:active {
 	color: #777;
 }
 
-.actions li.completed:hover a.image {
+.actions li.completed:hover a.asset {
 	background: #efefef;
 }
 

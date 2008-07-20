@@ -9,7 +9,7 @@ class Album
   property :updated_at, DateTime
   
   # === Associations
-  has n, :images
+  has n, :assets
 
   # === Instance methods
   

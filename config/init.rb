@@ -65,6 +65,8 @@ dependency "dm-aggregates"
 dependency "dm-timestamps"
 dependency "dm-validations"
 
+dependency "rmagick"
+
 #Merb::BootLoader.before_app_loads do 
 #  Merb::Slices::config[:merb_auth][:layout] = :application 
 #end

@@ -1,0 +1,12 @@
+- title "upload"
+- menu :upload
+
+%h2 upload
+
+= error_messages_for :asset
+
+- form_for(@asset, :action => url(:assets), :multipart => true) do
+  = partial :form
+  = submit_button "Create"
+  or
+  = link_to "cancel", url(:assets)

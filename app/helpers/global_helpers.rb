@@ -1,17 +1,17 @@
 module Merb
   module GlobalHelpers
-    # Generate an url to an image
+    # Generate an url to an asset
     #
     # ==== Parameters
-    # image<Image>:: An Image object
+    # asset<Asset>:: An Asset object
     #
     # ==== Returns
-    # String:: The URL for the image
+    # String:: The URL for the asset
     #
     # --
     # @api public
-    def image_url(image)
-      "#{url(:image, image)}/#{image.filename}"
+    def asset_url(asset)
+      "#{url(:asset, asset)}/#{asset.filename}"
     end
     
     # Little helper for selecting which menu will be active
@@ -68,7 +68,7 @@ module Merb
           :position => 2
         },
         :upload => {
-          :content => link_to("Upload", url(:new_image)),
+          :content => link_to("Upload", url(:new_asset)),
           :position => 3,
           :attrs => { :class => "right" }
         }

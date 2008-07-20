@@ -5,5 +5,5 @@
   %h2
     = @album
     %small== (#{link_to "edit", url(:edit_album, @album)})
-  %ul= partial "images/image", :with => @album.images
+  %ul= partial "assets/asset", :with => @album.assets
   %br{:style => "clear: both;"}
