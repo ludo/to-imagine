@@ -1,3 +1,4 @@
 %li.album
-  = link_to image_tag("empty.png"), url(:album, album), :class => "asset"
+  - image = album.assets.empty? ? image_tag("empty.png") : asset_tag(album.assets.first, :geometry => :thumb)
+  = link_to image, url(:album, album), :class => "asset"
   = link_to album.shortened_title, url(:album, album), :title => album

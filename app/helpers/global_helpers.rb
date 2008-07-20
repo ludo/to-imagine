@@ -1,17 +1,37 @@
 module Merb
   module GlobalHelpers
+    # Display an asset
+    #
+    # ==== Parameters
+    # asset<Asset>:: The asset
+    # opts<Hash>:: Additional options for the asset tag (see below)
+    #
+    # ==== Options
+    # :geometry<Symbol>:: Specify a geometry for the asset
+    #
+    # All other options are passed to the +image_tag+ helper in merb-assets.
+    #
+    # --
+    # @api public
+    def asset_tag(asset, opts = {})
+      image_tag(asset_url(asset, opts[:geometry]))
+    end
+    
     # Generate an url to an asset
     #
     # ==== Parameters
     # asset<Asset>:: An Asset object
+    # 
     #
     # ==== Returns
     # String:: The URL for the asset
     #
     # --
     # @api public
-    def asset_url(asset)
-      "#{url(:asset, asset)}/#{asset.filename}"
+    def asset_url(asset, geometry = nil)
+      geometry = "#{geometry}." if geometry
+      
+      "#{url(:asset, asset)}/#{geometry}#{asset.filename}"
     end
     
     # Little helper for selecting which menu will be active
@@ -75,4 +95,5 @@ module Merb
       }
     end
   end
+
 end

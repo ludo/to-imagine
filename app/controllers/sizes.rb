@@ -2,7 +2,7 @@ class Sizes < Application
   # provides :xml, :yaml, :js
 
   def index
-    @sizes = Size.all(:order => [:title])
+    @sizes = Size.all(:order => [:description])
     display @sizes
   end
 

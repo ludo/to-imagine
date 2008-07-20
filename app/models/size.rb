@@ -3,13 +3,18 @@ class Size
 
   # === Properties
   property :id, Integer, :serial => true
-  property :title, String, :size => 20, :unique => true, :nullable => false
+  property :name, String, :size => 16, :unique => true, :nullable => false
+  property :description, String, :size => 32, :unique => true, :nullable => false
   property :width, Integer, :nullable => false
   property :height, Integer, :nullable => false
   
   # === Associations
   
   # === Instance Methods
+  
+  def name=(value)
+    attribute_set(:name, value.downcase)
+  end
   
   # Geometry string for use with RMagick
   #
@@ -23,18 +28,7 @@ class Size
   #
   # --
   # @api public
-  def geometry
-    "#{@width}x#{@height}"
-  end
-  
-  # Return the title when stringified
-  #
-  # ===== Returns
-  # String:: The title
-  #
-  # --
-  # @api public
   def to_s
-    @title
+    "#{@width}x#{@height}"
   end
 end

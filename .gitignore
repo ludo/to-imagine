@@ -1,3 +1,5 @@
 .DS_Store
 config/database.yml
 log/*
+public/cache/*
+tmp/cache/*

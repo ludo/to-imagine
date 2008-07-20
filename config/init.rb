@@ -57,6 +57,7 @@ Gem.path.unshift(Merb.root / "gems")
 #dependency "merb-slices"  
 dependency "merb-assets"
 #dependency "merb-auth"
+dependency "merb-cache"
 dependency "merb-haml"
 dependency "merb_helpers"
 dependency "merb-jquery"
@@ -77,6 +78,13 @@ Merb::BootLoader.after_app_loads do
   # MIME types
   Merb.add_mime_type :jpg, :to_jpg, %w[image/jpeg]
 end
+
+Merb::Plugins.config[:merb_cache] = {
+  :cache_html_directory => Merb.dir_for(:public) / "cache",
+  :disable => "development",
+  :store => "file",
+  :cache_directory => Merb.root_path("tmp/cache"),
+}
 
 #
 # ==== Set up your ORM of choice

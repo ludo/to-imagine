@@ -1,5 +1,6 @@
 class Assets < Application
-  # provides :xml, :yaml, :js
+  # Cache generated assets
+  cache_page :show
 
   def index
     @assets = Asset.all
@@ -15,9 +16,9 @@ class Assets < Application
     case content_type
     when :jpg
       if params[:size]
-        size = Size.first(:title => params[:size])
+        size = Size.first(:name => params[:size])
         raise NotFound unless size
-        data = @asset.resize(size.geometry)
+        data = @asset.resize(size)
       else
         data = @asset.data
       end
@@ -57,6 +58,7 @@ class Assets < Application
   end
 
   def update
+    expire_page :show
     @asset = Asset.get(params[:id])
     raise NotFound unless @asset
     if @asset.update_attributes(params[:asset]) || !@asset.dirty?
@@ -67,6 +69,7 @@ class Assets < Application
   end
 
   def destroy
+    expire_page :show
     @asset = Asset.get(params[:id])
     raise NotFound unless @asset
     if @asset.destroy
