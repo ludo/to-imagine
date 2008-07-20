@@ -8,7 +8,7 @@ module SizeSpecHelper
   end
 end
 
-describe Size, "with dimensions" do
+describe Size, "with geometry" do
   include SizeSpecHelper
   
   before(:each) do
@@ -16,7 +16,7 @@ describe Size, "with dimensions" do
   end
   
   it "should display them in a format known to RMagick" do
-    @size.dimensions.should == "#{valid_properties[:width]}x#{valid_properties[:height]}"
+    @size.geometry.should == "#{valid_properties[:width]}x#{valid_properties[:height]}"
   end
 
 end

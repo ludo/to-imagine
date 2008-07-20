@@ -41,4 +41,10 @@ class Image
       value[:tempfile]
     end)
   end
+  
+  def resize(geometry)
+    Image.from_blob(data).change_geometry(geometry) do |cols, rows, img|
+      img.resize(cols, rows)
+    end
+  end
 end

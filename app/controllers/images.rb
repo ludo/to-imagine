@@ -14,8 +14,15 @@ class Images < Application
     
     case content_type
     when :jpg
+      if params[:size]
+        size = Size.first(:title => params[:size])
+        image = @image.resize(size.geometry)
+      else
+        image = @image.data
+      end
+      
       if params[:filename] && @image.filename == "#{params[:filename]}.#{params[:extension]}"
-        send_data(@image.data, 
+        send_data(image, 
           :filename => @image.filename, 
           :type => @image.content_type, 
           :disposition => "inline"

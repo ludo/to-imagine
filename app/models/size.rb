@@ -11,7 +11,19 @@ class Size
   
   # === Instance Methods
   
-  def dimensions
+  # Geometry string for use with RMagick
+  #
+  # A geometry string is often used by RMagick. This method makes it easy
+  # to create a geometry string. For a full explanation of geometry strings in
+  # Rmagick see: 
+  # http://studio.imagemagick.org/RMagick/doc/imusage.html#geometry
+  #
+  # ==== Returns
+  # String:: RMagick compatible geometry string
+  #
+  # --
+  # @api public
+  def geometry
     "#{@width}x#{@height}"
   end
   

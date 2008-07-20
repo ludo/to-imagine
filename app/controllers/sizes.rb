@@ -22,7 +22,7 @@ class Sizes < Application
   def create
     @size = Size.new(params[:size])
     if @size.save
-      redirect url(:size, @size)
+      redirect url(:sizes)
     else
       render :new
     end
@@ -32,7 +32,7 @@ class Sizes < Application
     @size = Size.get(params[:id])
     raise NotFound unless @size
     if @size.update_attributes(params[:size]) || !@size.dirty?
-      redirect url(:size, @size)
+      redirect url(:sizes)
     else
       raise BadRequest
     end

@@ -55,7 +55,6 @@ Gem.path.unshift(Merb.root / "gems")
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
 #dependency "merb-slices"  
-
 dependency "merb-assets"
 #dependency "merb-auth"
 dependency "merb-haml"
