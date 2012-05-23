@@ -99,7 +99,7 @@ a.imagine, #footer a.imagine {
 }
 
 #auth a {
-	background: inherit;
+	background: transparent;
 	border: none;
 	color: #fff;
 }
@@ -115,7 +115,7 @@ a.imagine, #footer a.imagine {
 }
 
 #header a {
-	background: inherit;
+	background: transparent;
 	border: none;
 	color: #498312;
 	text-decoration: none;
@@ -160,7 +160,7 @@ a.imagine, #footer a.imagine {
 }
 
 #nav a, div#nav a:link, div#nav a:visited {
-	background-color: inherit;
+	background: transparent;
 	border: none;
 	color: #444;
 }

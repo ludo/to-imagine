@@ -1,5 +1,24 @@
+require 'digest/md5'
+
 module Merb
   module GlobalHelpers
+
+    # Display a Gravatar avatar
+    #
+    # TODO Allow options, like different sizes
+    #
+    # ==== Parameters
+    # email<String>:: E-mail address to show Gravatar for
+    #
+    # ==== Returns
+    # String:: An URL to a Gravatar
+    #
+    # --
+    # @api public
+    def gravatar(email)
+      str = "http://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}.jpg?s=40"
+    end
+
     # Display an asset
     #
     # ==== Parameters
@@ -16,12 +35,12 @@ module Merb
     def asset_tag(asset, opts = {})
       image_tag(asset_url(asset, opts[:geometry]))
     end
-    
+
     # Generate an url to an asset
     #
     # ==== Parameters
     # asset<Asset>:: An Asset object
-    # 
+    #
     #
     # ==== Returns
     # String:: The URL for the asset
@@ -30,10 +49,10 @@ module Merb
     # @api public
     def asset_url(asset, geometry = nil)
       geometry = "#{geometry}." if geometry
-      
+
       "#{url(:asset, asset)}/#{geometry}#{asset.filename}"
     end
-    
+
     # Little helper for selecting which menu will be active
     #
     # ==== Parameters
@@ -44,7 +63,7 @@ module Merb
     def menu(selected)
       @menu = selected
     end
-    
+
     def render_menu
       menu = ""
       menu_items.sort { |a,b| a[1][:position] <=> b[1][:position] }.each do |item|
@@ -55,11 +74,11 @@ module Merb
         end
 
         # Create a tag for each item
-      	menu += tag "li", item[1][:content], item[1][:attrs]
-    	end
-    	tag "ul", menu
+        menu += tag "li", item[1][:content], item[1][:attrs]
+      end
+      tag "ul", menu
     end
-    
+
     # Set the <title> for a page
     #
     # --
@@ -67,7 +86,7 @@ module Merb
     def title(value)
       throw_content(:for_title, "#{h(value)} - ")
     end
-    
+
   private
 
     # Collection of menu items
